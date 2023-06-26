@@ -8,13 +8,10 @@ namespace RepositoryPattern.Controllers
     {
         public IActionResult Index()
         {
-            // Creación del Repositorio
             IProductoRepository productoRepository = new ProductoRepository();
 
-            // Creación del servicio de productos utilizando el Repositorio
             ProductoService productoService = new ProductoService(productoRepository);
 
-            // Ejemplo de uso del servicio y el Repositorio
             var producto1 = new ProductoModel { Id = 1, Nombre = "Camiseta", Precio = 29.99m };
             productoService.AgregarProducto(producto1);
 
